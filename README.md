@@ -4,18 +4,18 @@ Con una combinación de entretenimiento y aprendizaje, "HuertoLand" ofrece una e
 
 ## Requisitos del Sistema
 
-- Unity 20XX.XX.XX o superior
-- Sistema operativo: Windows 10, macOS, Linux, etc. (según la plataforma de desarrollo)
+- Unity 2022.3.21f1 o superior
+- Sistema operativo: Windows 10, Andorid.
 
 ## Instalación
 
 1. Clona o descarga este repositorio.
-2. Abre el proyecto en Unity.
+2. Abre el proyecto en Unity o ejecutable.
 3. ...
 
 ## Uso
 
-Describe cómo iniciar y usar el proyecto, incluyendo instrucciones sobre cómo ejecutar el juego o la aplicación.
+Abre el ejecutable de HuertoLand, una vez abierto, sigue las instrucciones dentro del juego, las cuales lo guiarán através de la experiencia.
 
 ## Características
 
@@ -35,5 +35,9 @@ Indica la licencia bajo la cual se distribuye el proyecto, por ejemplo, MIT Lice
 
 ## Contacto
 
-- [Correo electrónico](mailto:tu@email.com)
-- [Sitio web](https://example.com)
+- mauricio.escobar@uao.edu.co
+- marco.acosta@uao.edu.co
+- rfmq9530@gmail.com
+- jeronimo.duque@uao.edu.co
+- sebastian.escobar_t@uao.edu.co
+
