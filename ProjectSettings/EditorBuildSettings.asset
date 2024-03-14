@@ -6,6 +6,12 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/MenuInicio.unity
+    guid: 72828e858e16bea4b9f73ef68778de95
+  - enabled: 1
+    path: Assets/Scenes/MenuInicio2.unity
+    guid: 1768667613f9ed342804e852d9a1e4fe
+  - enabled: 1
     path: Assets/Scenes/TurorialLevel.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   m_configObjects: {}
