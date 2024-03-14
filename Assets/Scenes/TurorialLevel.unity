@@ -417,7 +417,7 @@ GameObject:
   - component: {fileID: 638566813}
   - component: {fileID: 638566816}
   - component: {fileID: 638566817}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Plane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -671,16 +671,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 1576742834}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6a12362f1cf4127428c453740946e089, type: 3}
+  m_Script: {fileID: 11500000, guid: b72dfacde1b77ce4ba102cb792112181, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   velocidadMovimiento: 5
   fuerzaSalto: 10
   puntoSuelo: {fileID: 638566814}
-  radioSuelo: 10
+  radioSuelo: 0
   capaSuelo:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 0
 --- !u!212 &1576742837
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -879,8 +879,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "Usa las letras del teclado para moverte adelante y atr\xE1s"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 6834b3655b6716546a6154b72c7e79bb, type: 2}
-  m_sharedMaterial: {fileID: -4067247786708141946, guid: 6834b3655b6716546a6154b72c7e79bb, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: b2176dac0b812704198132f7ca4bacf8, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: b2176dac0b812704198132f7ca4bacf8, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
