@@ -1407,6 +1407,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: -8653719598885068355, guid: dc2065f82534f764db6aa35c587ed126, type: 3}
       insertIndex: -1
       addedObject: {fileID: 262030307}
+    - targetCorrespondingSourceObject: {fileID: -8653719598885068355, guid: dc2065f82534f764db6aa35c587ed126, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 262030308}
   m_SourcePrefab: {fileID: 4843985084834002234, guid: dc2065f82534f764db6aa35c587ed126, type: 3}
 --- !u!1 &262030303 stripped
 GameObject:
@@ -1499,6 +1502,27 @@ CapsuleCollider2D:
   m_Offset: {x: 0.076896414, y: 5.0933785}
   m_Size: {x: 4.884516, y: 10.597764}
   m_Direction: 0
+--- !u!95 &262030308
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 262030303}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 02e13a09bdd5c574ca068c508d98e9b4, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &269374326
 GameObject:
   m_ObjectHideFlags: 0
