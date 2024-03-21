@@ -8,6 +8,7 @@ public class Movement : MonoBehaviour
     public float fuerzaSalto = 10f;
     private Rigidbody2D rb;
     private bool enSuelo;
+    private bool quiereSaltar;
     public Transform puntoSuelo;
     public float radioSuelo;
     public LayerMask capaSuelo;
@@ -17,6 +18,15 @@ public class Movement : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
     }
 
+    void Update()
+    {
+        // Comprobar la entrada para el salto
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            quiereSaltar = true;
+        }
+    }
+
     void FixedUpdate()
     {
         enSuelo = Physics2D.OverlapCircle(puntoSuelo.position, radioSuelo, capaSuelo);
@@ -24,9 +34,10 @@ public class Movement : MonoBehaviour
         float movimiento = Input.GetAxis("Horizontal");
         rb.velocity = new Vector2(movimiento * velocidadMovimiento, rb.velocity.y);
 
-        if (Input.GetKeyDown(KeyCode.Space) && enSuelo)
+        if (quiereSaltar && enSuelo)
         {
             rb.velocity = new Vector2(rb.velocity.x, fuerzaSalto);
+            quiereSaltar = false; // Resetear el flag después de saltar
         }
     }
 }

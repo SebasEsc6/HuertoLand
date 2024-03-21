@@ -8,7 +8,7 @@ public class EfectoSonido : MonoBehaviour
     [SerializeField] private AudioClip Caida;
 
     private void OnTriggerEnter2D(Collider2D other) {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("Player1"))
         {
             ControladorSonidos.Instance.EjecutarSonido(semilla);
             Destroy(gameObject);
