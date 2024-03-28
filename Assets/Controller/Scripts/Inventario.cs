@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI; // Agregar esta línea para acceder a la clase Image
+using UnityEngine.UI;
 
 public class Inventario : MonoBehaviour
 {
@@ -9,35 +9,28 @@ public class Inventario : MonoBehaviour
     public GameObject inv;
     public bool Activar_inv;
 
-    private void OnTriggerEnter2D(Collider2D other)
+    public void AgregarElemento(GameObject item)
     {
-        if (other.CompareTag("semilla"))
+        // Agregar el elemento al inventario
+        Bag.Add(item);
+        ActualizarInventario();
+    }
+
+    public void ActualizarInventario()
+    {
+        // Iterar sobre los botones de inventario y asignarles el sprite correspondiente
+        for (int i = 0; i < Bag.Count; i++)
         {
-            for (int i = 0; i < Bag.Count; i++)
-            {
-                if (Bag[i].GetComponent<Image>().enabled == false)
-                {
-                    Bag[i].GetComponent<Image>().enabled = true;
-                    Bag[i].GetComponent<Image>().sprite = other.GetComponent<SpriteRenderer>().sprite;
-                    break;
-                }
-            }
+            Button boton = inv.transform.GetChild(i).GetComponent<Button>();
+            boton.image.enabled = true;
+            boton.image.sprite = Bag[i].GetComponent<SpriteRenderer>().sprite;
         }
     }
 
-    void Update()
+    // Método llamado cuando se presiona el botón de activar/desactivar inventario
+    public void AlternarInventario()
     {
-        if (Activar_inv)
-        {
-            inv.SetActive(true);
-        }
-        else
-        {
-            inv.SetActive(false);
-        }
-        if (Input.GetKeyDown(KeyCode.Return))
-        {
-            Activar_inv = !Activar_inv;
-        }
+        Activar_inv = !Activar_inv;
+        inv.SetActive(Activar_inv);
     }
 }
