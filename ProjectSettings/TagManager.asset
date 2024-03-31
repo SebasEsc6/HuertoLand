@@ -43,3 +43,9 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Fondo
+    uniqueID: 65859543
+    locked: 0
+  - name: "Decoraci\xF3n"
+    uniqueID: 154877033
+    locked: 0
