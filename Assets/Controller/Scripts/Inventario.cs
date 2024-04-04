@@ -8,29 +8,54 @@ public class Inventario : MonoBehaviour
     public List<GameObject> Bag = new List<GameObject>();
     public GameObject inv;
     public bool Activar_inv;
+    public Text mensajeText; // Referencia al objeto de texto donde se mostrará el mensaje de la semilla
 
-    public void AgregarElemento(GameObject item)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        // Agregar el elemento al inventario
-        Bag.Add(item);
-        ActualizarInventario();
-    }
-
-    public void ActualizarInventario()
-    {
-        // Iterar sobre los botones de inventario y asignarles el sprite correspondiente
-        for (int i = 0; i < Bag.Count; i++)
+        if (collision.CompareTag("Semilla"))
         {
-            Button boton = inv.transform.GetChild(i).GetComponent<Button>();
-            boton.image.enabled = true;
-            boton.image.sprite = Bag[i].GetComponent<SpriteRenderer>().sprite;
+            for (int i = 0; i < Bag.Count; i++)
+            {
+                if (Bag[i].GetComponent<Image>().enabled == false)
+                {
+                    Bag[i].GetComponent<Image>().enabled = true;
+                    Bag[i].GetComponent<Image>().sprite = collision.GetComponent<SpriteRenderer>().sprite;
+                    MostrarMensajeSemilla("¡Has recogido una semilla!");
+                    break;
+                }
+            }
         }
     }
 
-    // Método llamado cuando se presiona el botón de activar/desactivar inventario
-    public void AlternarInventario()
+    private void MostrarMensajeSemilla(string mensaje)
     {
-        Activar_inv = !Activar_inv;
-        inv.SetActive(Activar_inv);
+        // Mostrar el mensaje en el objeto de texto
+        mensajeText.text = mensaje;
+        // Después de un tiempo, eliminar el mensaje
+        StartCoroutine(EliminarMensaje());
+    }
+
+    private IEnumerator EliminarMensaje()
+    {
+        // Esperar unos segundos antes de eliminar el mensaje
+        yield return new WaitForSeconds(3);
+        mensajeText.text = ""; // Limpiar el texto después de unos segundos
+    }
+
+    // Método llamado cuando se presiona el botón de activar/desactivar inventario
+    private void Update()
+    {
+        if (Activar_inv)
+        {
+            inv.SetActive(true);
+        }
+        else
+        {
+            inv.SetActive(false);
+        }
+        if (Input.GetKeyDown(KeyCode.Tab))
+        {
+            Activar_inv = !Activar_inv;
+        }
     }
 }
