@@ -17,18 +17,8 @@ public class SceneController : MonoBehaviour
         SceneManager.LoadScene("S_Menu");
         Debug.Log("VA AL MENU");
     }
-    public void IrRompecabeza()
-    {
-        Debug.Log("VA AL ROMPECABEZA");
-        SceneManager.LoadScene("PC_BUILD");
-        //menuScene.SetActive(false);
-    }
-    public void IrAdivinaQ()
-    {
-        Debug.Log("VA AL adivina q");
-        SceneManager.LoadScene("Guess_who");
-        //menuScene.SetActive(false);
-    }
+
+ 
     public void Cerrar()
     {
         //Cerrar
@@ -56,4 +46,10 @@ public class SceneController : MonoBehaviour
         SceneManager.LoadScene("NivelTutorial");
         Debug.Log("Vamos al nivel tutorial");
     }
+    public void IrPanelnicio()
+    {
+        SceneManager.LoadScene("Panelnicio");
+        Debug.Log("Vamos al nivel tutorial");
+    }
+
 }
