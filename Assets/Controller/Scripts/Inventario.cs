@@ -4,23 +4,19 @@ using UnityEngine.UI;
 
 public class Inventario : MonoBehaviour
 {
-    public List<GameObject> Bag = new List<GameObject>();
     public GameObject inv;
     public bool activar_inv;
-
-    private void OnTriggerEnter2D(Collider2D collision)
+    public void Visible()
     {
-        if (collision.CompareTag("Semilla"))
+        if (activar_inv)
         {
-            for (int i = 0; i < Bag.Count; i++)
-            {
-                if (Bag[i].GetComponent<Image>().enabled == false)
-                {
-                    Bag[i].GetComponent<Image>().enabled = true;
-                    Bag[i].GetComponent<Image>().sprite = collision.GetComponent<SpriteRenderer>().sprite;
-                    break;
-                }
-            }
+            inv.SetActive(false);
+            activar_inv = false;
+        }
+        else 
+        {
+            inv.SetActive(true);
+            activar_inv = true;
         }
     }
 }

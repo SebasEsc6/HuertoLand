@@ -12,7 +12,7 @@ public class EfectoSonido : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             ControladorSonidos.Instance.EjecutarSonido(semilla);
-            Destroy(gameObject);
+            //Destroy(gameObject);
         }
         else
         {

@@ -7,9 +7,14 @@ using UnityEngine.UI;
 public class SceneController : MonoBehaviour
 {
     public GameObject gameObject;
+    [SerializeField] private GameObject botonPausa;
+
+
 
     public void Volver()
     {
+        Time.timeScale = 1f;
+        botonPausa.SetActive(true);
         gameObject.SetActive(false);
     }
     public void IrMenu()
@@ -42,6 +47,11 @@ public class SceneController : MonoBehaviour
         SceneManager.LoadScene("NivelTutorial");
         Debug.Log("Vamos al nivel tutorial");
     }
-
+    public void Pausa()
+    {
+        Time.timeScale = 0f;
+        botonPausa.SetActive(true);
+        gameObject.SetActive(true);
+    }
 
 }

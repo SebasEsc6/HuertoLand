@@ -1,4 +1,6 @@
+using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -9,6 +11,10 @@ public class PlayerMovement : MonoBehaviour
 
     private float moveInput;
     private bool isGrounded;
+
+    public List<GameObject> Bag = new List<GameObject>();
+    public GameObject inv;
+    public bool activar_inv;
 
     void Update()
     {
@@ -45,6 +51,21 @@ public class PlayerMovement : MonoBehaviour
         if (collision.gameObject.CompareTag("Suelo"))
         {
             isGrounded = true;
+        }
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Semilla"))
+        {
+            Debug.Log("Choque con la semilla");
+            for (int i = 0; i < Bag.Count; i++)
+            {
+                if (Bag[i].GetComponent<Image>().enabled == false)
+                {
+                    Bag[i].GetComponent<Image>().enabled = true;
+                    break;
+                }
+            }
         }
     }
 }
