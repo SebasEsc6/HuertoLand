@@ -14,7 +14,7 @@ public class SceneController : MonoBehaviour
     }
     public void IrMenu()
     {
-        SceneManager.LoadScene("S_Menu");
+        SceneManager.LoadScene("Panelnicio");
         Debug.Log("VA AL MENU");
     }
 
@@ -36,20 +36,12 @@ public class SceneController : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         print("RESET");
     }
-    public void IrMainMenu()
-    {
-        SceneManager.LoadScene("MainMenu");
-        Debug.Log("VA Al MAIN MENU");
-    }
+
     public void IrTutorial()
     {
         SceneManager.LoadScene("NivelTutorial");
         Debug.Log("Vamos al nivel tutorial");
     }
-    public void IrPanelnicio()
-    {
-        SceneManager.LoadScene("Panelnicio");
-        Debug.Log("Vamos al nivel tutorial");
-    }
+
 
 }
