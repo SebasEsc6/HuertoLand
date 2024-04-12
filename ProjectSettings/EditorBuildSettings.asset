@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/NivelTutorial.unity
     guid: 6473110ecf54d2d479abaedfd92938b1
+  - enabled: 1
+    path: Assets/Scenes/NivelHuerto.unity
+    guid: 02a1fb025269b05419405f55e0704fba
   m_configObjects: {}
