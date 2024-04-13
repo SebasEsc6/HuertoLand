@@ -14,7 +14,7 @@ public class SceneController : MonoBehaviour
     public void Volver()
     {
         Time.timeScale = 1f;
-        botonPausa.SetActive(true);
+       // botonPausa.SetActive(true);
         gameObject.SetActive(false);
     }
     public void IrMenu()
