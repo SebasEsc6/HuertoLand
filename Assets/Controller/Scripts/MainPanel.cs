@@ -22,8 +22,8 @@ public class MainPanel : MonoBehaviour
 
     private void Awake()
     {
-        volumeFX.onValueChanged.AddListener(ChangeVolumeFX);
-        volumeMaster.onValueChanged.AddListener(ChangeVolumeMaster);
+        //volumeFX.onValueChanged.AddListener(ChangeVolumeFX);
+        //volumeMaster.onValueChanged.AddListener(ChangeVolumeMaster);
     }
 
     public void SetMute()
