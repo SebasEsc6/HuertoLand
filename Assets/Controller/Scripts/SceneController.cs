@@ -28,6 +28,7 @@ public class SceneController : MonoBehaviour
     {
         //Cerrar
         Debug.Log("CIERRA");
+        Application.Quit();
     }
 
     public void Visible()

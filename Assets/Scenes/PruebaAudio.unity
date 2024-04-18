@@ -1093,6 +1093,9 @@ MonoBehaviour:
   jumpForce: 7
   animator: {fileID: 1758685562}
   rb: {fileID: 1758685561}
+  Bag: []
+  inv: {fileID: 0}
+  activar_inv: 0
 --- !u!61 &1758685560
 BoxCollider2D:
   m_ObjectHideFlags: 0

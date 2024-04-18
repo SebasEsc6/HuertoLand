@@ -540,6 +540,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameObject: {fileID: 724691573}
+  botonPausa: {fileID: 0}
 --- !u!1 &1903500484
 GameObject:
   m_ObjectHideFlags: 0
