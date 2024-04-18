@@ -670,6 +670,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 801868555}
   inventario: {fileID: 2002040889}
+  sonido: {fileID: 8300000, guid: e3f74cfdd24ec61429c42e377d83d974, type: 3}
 --- !u!66 &305208084 stripped
 CompositeCollider2D:
   m_CorrespondingSourceObject: {fileID: 986603593663516194, guid: 5957d60b07a62ab42a0b6d57bc3a491c, type: 3}
