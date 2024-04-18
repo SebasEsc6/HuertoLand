@@ -9,10 +9,27 @@ Con una combinación de entretenimiento y aprendizaje, "HuertoLand" ofrece una e
 
 ## Instalación
 
-1. Clona o descarga este repositorio.
-2. Abre el proyecto en Unity o ejecutable.
-3. ...
+Enlace de Acceso al Demo: 
 
+[Acceso a la demostración del videojuego] (inserte enlace) 
+
+Guía Detallada para el Acceso e Interacción con el Demo: 
+
+Descarga del Paquete de Demostración: 
+
+Visite el enlace proporcionado anteriormente y proceda a descargar el archivo .zip. Este archivo contiene todos los componentes necesarios para la ejecución del videojuego, asegurando una instalación completa y efectiva. 
+
+Extracción de los Archivos: 
+
+Una vez descargado el archivo .zip, localice el archivo en su sistema y utilice un software de extracción para descomprimir los contenidos en la carpeta de su elección. Es crucial asegurar que todos los archivos sean extraídos correctamente para evitar problemas durante la ejecución del juego. 
+
+Inicio del Videojuego: 
+
+En la carpeta descomprimida, busque el ejecutable denominado (inserte el nombre del ejecutable). Realice un doble clic en este archivo para iniciar el videojuego. El grupo se ha asegurado de optimizar el proceso de inicio para que sea directo y sin complicaciones. 
+
+Interacción con las Funcionalidades del Juego: 
+
+Cuando el videojuego funcione, se guiará con una interfaz intuitiva que le permitirá explorar las funcionalidades implementadas. El demo incluye ejemplos concretos de las historias de usuario, mostrando cómo cada elemento del juego contribuye a una experiencia de usuario cohesiva y envolvente. 
 ## Uso
 
 Abre el ejecutable de HuertoLand, una vez abierto, sigue las instrucciones dentro del juego, las cuales lo guiarán através de la experiencia.
