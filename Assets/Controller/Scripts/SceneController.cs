@@ -54,5 +54,19 @@ public class SceneController : MonoBehaviour
         botonPausa.SetActive(true);
         gameObject.SetActive(true);
     }
-
+      public void IrHuerto()
+    {
+        SceneManager.LoadScene("NivelHuerto");
+        Debug.Log("Vamos al nivel huerto");
+    }
+      public void IrCueva()
+    {
+        SceneManager.LoadScene("NivelCueva");
+        Debug.Log("Vamos al nivel Cueva");
+    }
+      public void IrCastillo()
+    {
+        SceneManager.LoadScene("NivelCastillo");
+        Debug.Log("Vamos al nivel Castillo");
+    }
 }
