@@ -3,25 +3,34 @@ using UnityEngine.UI;
 
 public class ButtonController : MonoBehaviour
 {
-    public Image buttonImage;
     public Sprite newImage;
     public Canvas canvasToToggle;
 
     private bool canvasVisible = false;
 
-    public void OnButtonClick()
-    {
-        // Cambiar la imagen del botón
-        if (buttonImage != null && newImage != null)
-        {
-            buttonImage.sprite = newImage;
-        }
+    private SpriteRenderer spriteRenderer; // Referencia al componente SpriteRenderer
 
-        // Mostrar u ocultar el canvas
-        if (canvasToToggle != null)
+    private void Start()
+    {
+        // Obtener el componente SpriteRenderer del GameObject
+        spriteRenderer = GetComponent<SpriteRenderer>();
+    }
+
+    public void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("Player"))
         {
-            canvasVisible = !canvasVisible;
-            canvasToToggle.gameObject.SetActive(canvasVisible);
+            if (spriteRenderer != null && newImage != null)
+            {
+                spriteRenderer.sprite = newImage;
+            }
+
+            // Mostrar u ocultar el canvas
+            if (canvasToToggle != null)
+            {
+                canvasVisible = !canvasVisible;
+                canvasToToggle.gameObject.SetActive(canvasVisible);
+            }
         }
     }
 }
