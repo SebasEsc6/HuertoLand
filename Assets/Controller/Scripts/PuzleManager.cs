@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -44,13 +43,10 @@ public class PuzleManager : MonoBehaviour
 
     void generateQuestion()
     {
-        // Seleccionar una pregunta aleatoria
         currentQuestion = Random.Range(0, QnA.Count);
 
-        // Obtener el sprite de la pregunta seleccionada
         Sprite questionSprite = QnA[currentQuestion].QuestionImg;
 
-        // Asignar el sprite al componente Image para mostrar la imagen
         QuestionImg.sprite = questionSprite;
 
         SetAnswers();

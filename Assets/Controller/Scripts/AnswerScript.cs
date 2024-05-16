@@ -16,7 +16,6 @@ public class AnswerScript : MonoBehaviour
         else
         {
             Debug.Log("Paila");
-            puzleManager.correct();
         }
     }
 }
