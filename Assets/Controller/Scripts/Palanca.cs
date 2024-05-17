@@ -8,11 +8,10 @@ public class ButtonController : MonoBehaviour
 
     private bool canvasVisible = false;
 
-    private SpriteRenderer spriteRenderer; // Referencia al componente SpriteRenderer
+    private SpriteRenderer spriteRenderer;
 
     private void Start()
     {
-        // Obtener el componente SpriteRenderer del GameObject
         spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
