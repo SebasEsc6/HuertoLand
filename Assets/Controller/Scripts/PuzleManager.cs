@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -9,16 +10,43 @@ public class PuzleManager : MonoBehaviour
     public int currentQuestion;
 
     public Image QuestionImg; // Debe ser de tipo Image para mostrar sprites
+    public GameObject CompletionPanel; // Referencia al panel de completado
+    public GameObject targetCanvas; // Referencia al canvas que quieres cerrar
 
     private void Start()
     {
         generateQuestion();
+        CompletionPanel.SetActive(false); // Asegúrate de que el panel esté desactivado al inicio
     }
     public void correct()
     {
-        QnA.RemoveAt(currentQuestion);
-        generateQuestion();
+        if (QnA.Count > 0)
+        {
+            QnA.RemoveAt(currentQuestion);
+            if (QnA.Count > 0)
+            {
+                generateQuestion();
+            }
+            else
+            {
+                Debug.Log("Todas las preguntas han sido respondidas.");
+                StartCoroutine(ShowCompletionPanelTemporarily());
+            }
+        }
     }
+
+    IEnumerator ShowCompletionPanelTemporarily()
+    {
+        CompletionPanel.SetActive(true);
+        yield return new WaitForSeconds(2.0f);
+        CompletionPanel.SetActive(false);
+        CloseCanvas();
+    }
+    void CloseCanvas()
+    {
+        targetCanvas.SetActive(false);
+    }
+
     void SetAnswers()
     {
         for (int i = 0; i < options.Length; i++)
