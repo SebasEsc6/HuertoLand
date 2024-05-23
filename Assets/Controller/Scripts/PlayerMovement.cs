@@ -7,6 +7,8 @@ public class PlayerMovement : MonoBehaviour
     public float speed = 5.0f;
     public float jumpForce = 7.0f;
     public Animator animator;
+    public Animator headAnimator; 
+    public Animator AuraAnimator; 
     public Rigidbody2D rb;
 
     private float moveInput;
@@ -22,7 +24,7 @@ public class PlayerMovement : MonoBehaviour
         moveInput = Input.GetAxis("Horizontal");
         rb.velocity = new Vector2(moveInput * speed, rb.velocity.y);
 
-        // Activar animaci髇 de correr
+        // Activar animaci贸n de correr
         animator.SetBool("Caminar", moveInput != 0);
 
         // Salto
@@ -32,10 +34,10 @@ public class PlayerMovement : MonoBehaviour
             isGrounded = false;
         }
 
-        // Actualizar el par醡etro IsGrounded en el Animator
+        // Actualizar el par谩metro IsGrounded en el Animator
         animator.SetBool("IsGrounded", isGrounded);
 
-        // Girar el personaje de acuerdo a la direcci髇
+        // Girar el personaje de acuerdo a la direcci贸n
         if (moveInput > 0)
         {
             transform.eulerAngles = new Vector3(0, 0, 0);
@@ -61,15 +63,15 @@ public class PlayerMovement : MonoBehaviour
         if (collision.CompareTag("SorpresaEnfermo"))
         {
             Debug.Log("Enfermo trigger detected");  // Debug message
-            // Activar animaci髇 de enfermo
-            animator.SetBool("isEnfermo", true);
+            // Activar animaci贸n de enfermo
+            headAnimator.SetBool("isEnfermo", true);
             StartCoroutine(HandleEnfermo());
         }
         else if (collision.CompareTag("SorpresaSaludable"))
         {
             Debug.Log("Saludable trigger detected");  // Debug message
-            // Activar animaci髇 de saludable
-            animator.SetBool("isSaludable", true);
+            // Activar animaci贸n de saludable
+            AuraAnimator.SetBool("isSaludable", true);
             StartCoroutine(HandleSaludable());
         }
     }
@@ -78,9 +80,9 @@ public class PlayerMovement : MonoBehaviour
     {
         float originalSpeed = speed;
         speed = originalSpeed / 2;  // Reducir la velocidad a la mitad
-        yield return new WaitForSeconds(5);  // Duraci髇 del efecto
+        yield return new WaitForSeconds(5);  // Duraci贸n del efecto
         speed = originalSpeed;
-        animator.SetBool("isEnfermo", false);
+        headAnimator.SetBool("isEnfermo", false);
     }
 
     private IEnumerator HandleSaludable()
@@ -89,10 +91,10 @@ public class PlayerMovement : MonoBehaviour
         float originalJumpForce = jumpForce;
         speed = originalSpeed * 1.5f;  // Aumentar la velocidad
         jumpForce = originalJumpForce * 1.5f;  // Aumentar la fuerza de salto
-        yield return new WaitForSeconds(5);  // Duraci髇 del efecto
+        yield return new WaitForSeconds(5);  // Duraci贸n del efecto
         speed = originalSpeed;
         jumpForce = originalJumpForce;
-        animator.SetBool("isSaludable", false);
+        AuraAnimator.SetBool("isSaludable", false);
     }
 }
 
