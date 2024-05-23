@@ -56,14 +56,18 @@ public class PlayerMovement : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        Debug.Log("Trigger Entered with: " + collision.gameObject.tag);  // Debug message
+
         if (collision.CompareTag("SorpresaEnfermo"))
         {
+            Debug.Log("Enfermo trigger detected");  // Debug message
             // Activar animación de enfermo
             animator.SetBool("isEnfermo", true);
             StartCoroutine(HandleEnfermo());
         }
         else if (collision.CompareTag("SorpresaSaludable"))
         {
+            Debug.Log("Saludable trigger detected");  // Debug message
             // Activar animación de saludable
             animator.SetBool("isSaludable", true);
             StartCoroutine(HandleSaludable());
@@ -91,5 +95,6 @@ public class PlayerMovement : MonoBehaviour
         animator.SetBool("isSaludable", false);
     }
 }
+
 
 
