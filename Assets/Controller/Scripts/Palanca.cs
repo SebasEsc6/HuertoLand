@@ -42,8 +42,8 @@ public class ButtonController : MonoBehaviour
 
     private IEnumerator DisableMovementTemporarily()
     {
-        playerMovement.enabled = false; // Deshabilitar el movimiento
-        yield return new WaitForSeconds(3); // Esperar 3 segundos
-        playerMovement.enabled = true; // Habilitar el movimiento nuevamente
+        playerMovement.enabled = false;
+        yield return new WaitForSeconds(10);
+        playerMovement.enabled = true;
     }
 }

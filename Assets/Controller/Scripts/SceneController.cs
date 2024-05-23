@@ -61,7 +61,7 @@ public class SceneController : MonoBehaviour
     }
       public void IrCueva()
     {
-        SceneManager.LoadScene("NivelCueva");
+        SceneManager.LoadScene("PruebaPuzle");
         Debug.Log("Vamos al nivel Cueva");
     }
       public void IrCastillo()

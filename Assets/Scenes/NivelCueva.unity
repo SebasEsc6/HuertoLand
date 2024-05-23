@@ -1268,6 +1268,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   newImage: {fileID: 21300000, guid: 6b24ca4a3ac223a4ca0339b17735cfbf, type: 3}
   canvasToToggle: {fileID: 1844309050}
+  playerMovement: {fileID: 0}
 --- !u!212 &714492461
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2650,6 +2651,8 @@ MonoBehaviour:
   - {fileID: 1746891110}
   currentQuestion: 0
   QuestionImg: {fileID: 231354967}
+  CompletionPanel: {fileID: 0}
+  targetCanvas: {fileID: 0}
 --- !u!4 &1107253389
 Transform:
   m_ObjectHideFlags: 0
