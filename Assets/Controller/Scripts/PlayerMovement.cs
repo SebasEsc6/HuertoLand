@@ -1,6 +1,6 @@
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -14,9 +14,9 @@ public class PlayerMovement : MonoBehaviour
 
     public List<GameObject> Bag = new List<GameObject>();
     public GameObject inv;
-    public bool activar_inv;
+    public bool activarInv;
 
-    void Update()
+    private void Update()
     {
         // Movimiento horizontal
         moveInput = Input.GetAxis("Horizontal");
@@ -28,7 +28,7 @@ public class PlayerMovement : MonoBehaviour
         // Salto
         if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
         {
-            rb.AddForce(new Vector2(0f, jumpForce), ForceMode2D.Impulse);
+            rb.AddForce(new Vector2(0, jumpForce), ForceMode2D.Impulse);
             isGrounded = false;
         }
 
@@ -46,27 +46,50 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    void OnCollisionEnter2D(Collision2D collision)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Suelo"))
         {
             isGrounded = true;
         }
     }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Semilla"))
+        if (collision.CompareTag("SorpresaEnfermo"))
         {
-            Debug.Log("Choque con la semilla");
-            for (int i = 0; i < Bag.Count; i++)
-            {
-                if (Bag[i].GetComponent<Image>().enabled == false)
-                {
-                    Bag[i].GetComponent<Image>().enabled = true;
-                    break;
-                }
-            }
+            // Activar animación de enfermo
+            animator.SetBool("isEnfermo", true);
+            StartCoroutine(HandleEnfermo());
+        }
+        else if (collision.CompareTag("SorpresaSaludable"))
+        {
+            // Activar animación de saludable
+            animator.SetBool("isSaludable", true);
+            StartCoroutine(HandleSaludable());
         }
     }
+
+    private IEnumerator HandleEnfermo()
+    {
+        float originalSpeed = speed;
+        speed = originalSpeed / 2;  // Reducir la velocidad a la mitad
+        yield return new WaitForSeconds(5);  // Duración del efecto
+        speed = originalSpeed;
+        animator.SetBool("isEnfermo", false);
+    }
+
+    private IEnumerator HandleSaludable()
+    {
+        float originalSpeed = speed;
+        float originalJumpForce = jumpForce;
+        speed = originalSpeed * 1.5f;  // Aumentar la velocidad
+        jumpForce = originalJumpForce * 1.5f;  // Aumentar la fuerza de salto
+        yield return new WaitForSeconds(5);  // Duración del efecto
+        speed = originalSpeed;
+        jumpForce = originalJumpForce;
+        animator.SetBool("isSaludable", false);
+    }
 }
+
 

@@ -8,6 +8,8 @@ TagManager:
   - Suelo
   - Semilla
   - Panel
+  - SorpresaEnfermo
+  - SorpresaSaludable
   layers:
   - Default
   - TransparentFX
