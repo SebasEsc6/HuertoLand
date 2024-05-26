@@ -7,6 +7,8 @@ public class Inventario : MonoBehaviour
 {
     public GameObject inv;
     public bool activar_inv;
+    public GameObject panel;
+    public bool activar_panel;
 
     public void Visible()
     {
@@ -14,11 +16,15 @@ public class Inventario : MonoBehaviour
         {
             inv.SetActive(false);
             activar_inv = false;
+            panel.SetActive(false);
+            activar_panel = false;
         }
         else 
         {
             inv.SetActive(true);
             activar_inv = true;
+            panel.SetActive(true);
+            activar_panel = true;
         }
     }
 }
